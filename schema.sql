@@ -1,10 +1,7 @@
-/* Database schema to keep the structure of entire database. */
-CREATE TABLE animals (
-    name varchar(100)
-);
-
+-- Create vet_clinic database
 create database vet_clinic;
 
+-- Create animals table
 create table animals(
 id INT GENERATED ALWAYS AS IDENTITY,
 name VARCHAR(250),
