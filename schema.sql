@@ -1,13 +1,16 @@
 /* Database schema to keep the structure of entire database. */
+CREATE TABLE animals (
+    name varchar(100)
+);
 
-my_app=# create database vet_clinic;
+create database vet_clinic;
 
-my_app=# create table animals(
-my_app(# id INT GENERATED ALWAYS AS IDENTITY,
-my_app(# name VARCHAR(250),
-my_app(# date_of_birth DATE,
-my_app(# escape_attempts INT,
-my_app(# neutered  BOOLEAN,
-my_app(# weoght_kg DECIMAL
-my_app(# );
+create table animals(
+id INT GENERATED ALWAYS AS IDENTITY,
+name VARCHAR(250),
+date_of_birth DATE,
+escape_attempts INT,
+neutered  BOOLEAN,
+weight_kg DECIMAL
+);
 
