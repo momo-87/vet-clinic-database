@@ -138,6 +138,6 @@ Feel free to check the [issues page](https://github.com/momo-87/vet-clinic-datab
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
->This project is [MIT](https://opensource.org/license/mit/) licensed.
+>This project is [MIT](./LICENSE) licensed.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
