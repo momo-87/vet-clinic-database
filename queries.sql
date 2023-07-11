@@ -28,6 +28,10 @@ update animals
 set species = 'unspecified' where species is null;
 rollback;
 
+-- start a transaction
+begin;
+-- Update the animals table by setting the species column to 'digimon' for all animals that have a name ending in 'mon'
+
 
 
 
