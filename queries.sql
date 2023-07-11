@@ -40,5 +40,13 @@ set species = 'pokemon' where species is null;
 -- Commit the trabsaction
 commit;
 
+-- start a new transaction
+begin;
+-- delete all records in the animals
+delete from animals;
+-- roll back the transaction
+rollback;
+
+
 
 
