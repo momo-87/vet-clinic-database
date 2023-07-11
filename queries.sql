@@ -51,4 +51,5 @@ rollback;
 begin;
 -- Delete all animals born after Jan 1st, 2022
 delete from animals where date_of_birth > '2022-01-01';
-
+-- Create a savepoint for the transaction.
+savepoint sp1;
