@@ -40,8 +40,12 @@ set species = 'digimon' where name like '%mon';
 -- Update the animals table by setting the species column to 'pokemon' for all animals that don't have species already set.
 update animals
 set species = 'pokemon' where species is null;
+-- Verify that change was made
+SELECT species FROM animals;
 -- Commit the trabsaction
 commit;
+-- Verify that change persists after commit
+SELECT species FROM animals;
 
 -- start a transaction 3
 begin;
