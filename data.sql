@@ -9,3 +9,7 @@ insert into owners (full_name, age) values ('Sam Smith', 34), ('Jennifer Orwell'
 
 -- Insert data into species table
 insert into species (name) values ('Pokemon'), ('Digimon');
+
+-- Set species_id = 2 for animals which name ends with 'mon'
+update animals
+set species_id = 2 where name like '%mon';
