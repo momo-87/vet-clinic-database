@@ -11,3 +11,8 @@ neutered  BOOLEAN,
 weight_kg DECIMAL
 );
 
+-- Create owners table
+create table owners(
+id int generated always as identity primary key,
+full_name varchar(250),
+age int);
