@@ -28,7 +28,7 @@ update animals
 set species = 'unspecified' where species is null;
 rollback;
 
--- start a transaction
+-- start a transaction 1
 begin;
 -- Update the animals table by setting the species column to 'digimon' for all animals that have a name ending in 'mon'
 update animals
@@ -40,13 +40,15 @@ set species = 'pokemon' where species is null;
 -- Commit the trabsaction
 commit;
 
--- start a new transaction
+-- start a transaction 2
 begin;
 -- delete all records in the animals
 delete from animals;
 -- roll back the transaction
 rollback;
 
-
-
+-- start a transaction 3
+begin;
+-- Delete all animals born after Jan 1st, 2022
+delete from animals where date_of_birth > '2022-01-01';
 
