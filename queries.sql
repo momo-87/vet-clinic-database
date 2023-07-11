@@ -31,7 +31,7 @@ rollback; -- undo change
 SELECT species from animals; -- verify that change was undone
 COMMIT; -- end transaction
 
--- start a transaction 1
+-- start a transaction 2
 begin;
 -- Update the animals table by setting the species column to 'digimon' for all animals that have a name ending in 'mon'
 update animals
@@ -43,14 +43,18 @@ set species = 'pokemon' where species is null;
 -- Commit the trabsaction
 commit;
 
--- start a transaction 2
+-- start a transaction 3
 begin;
 -- delete all records in the animals
 delete from animals;
+-- Verify that change was made
+SELECT COUNT(*) FROM animals;
 -- roll back the transaction
 rollback;
+-- Verify that change was made
+SELECT COUNT(*) FROM animals;
 
--- start a transaction 3
+-- start a transaction 4
 begin;
 -- Delete all animals born after Jan 1st, 2022
 delete from animals where date_of_birth > '2022-01-01';
