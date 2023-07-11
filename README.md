@@ -19,9 +19,9 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
+  <!-- - [Install](#install) -->
+  <!-- - [Usage](#usage) -->
+  <!-- - [Run tests](#run-tests) -->
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
@@ -90,19 +90,19 @@
   git clone https://github.com/momo-87/vet-clinic-database.git
 ```
 
-### Install
-> Run this command:
-```sh
-  cd my-project
-  npm install
-```
+<!-- ### Install -->
+<!-- > Run this command: -->
+<!-- ```sh -->
+  <!-- # cd my-project -->
+  <!-- # npm install -->
+<!-- ``` -->
 
-### Usage
-> npm start
-### Run tests
-> npm test
-### Deployment
-> npm run build
+<!-- ### Usage -->
+<!-- > npm start -->
+<!-- ### Run tests -->
+<!-- > npm test -->
+<!-- ### Deployment -->
+<!-- > npm run build -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -115,7 +115,6 @@
 
 
 ## 🔭 Future Features <a name="future-features"></a>
-- [ ] Query and update animals table
 - [ ] Query multiple tables
 - [ ] add "join table" for visits
 - [ ] database performance audit
