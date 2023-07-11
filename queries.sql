@@ -31,7 +31,12 @@ rollback;
 -- start a transaction
 begin;
 -- Update the animals table by setting the species column to 'digimon' for all animals that have a name ending in 'mon'
+update animals
+set species = 'digimon' where name like '%mon';
 
+-- Update the animals table by setting the species column to 'pokemon' for all animals that don't have species already set.
+update animals
+set species = 'pokemon' where species is null;
 
 
 
