@@ -22,6 +22,72 @@ select * from animals where name != 'Gabumon';
 -- Find all animals with a weight between 10.4kg and 17.3kg (including the animals with the weights that equals precisely 10.4kg or 17.3kg)
 select * from animals where weight_kg between 10.4 and 17.3;
 
+-- Set the species column to unspecified inside a transaction then roll back
+begin;
+update animals
+set species = 'unspecified'; -- make changes
+SELECT species from animals; -- verify that change was made 
+rollback; -- undo change
+SELECT species from animals; -- verify that change was undone
+COMMIT; -- end transaction
 
+-- start a transaction 2
+begin;
+-- Update the animals table by setting the species column to 'digimon' for all animals that have a name ending in 'mon'
+update animals
+set species = 'digimon' where name like '%mon';
 
+-- Update the animals table by setting the species column to 'pokemon' for all animals that don't have species already set.
+update animals
+set species = 'pokemon' where species is null;
+-- Verify that change was made
+SELECT species FROM animals;
+-- Commit the trabsaction
+commit;
+-- Verify that change persists after commit
+SELECT species FROM animals;
 
+-- start a transaction 3
+begin;
+-- delete all records in the animals
+delete from animals;
+-- Verify that change was made
+SELECT COUNT(*) FROM animals;
+-- roll back the transaction
+rollback;
+-- Verify that change was made
+SELECT COUNT(*) FROM animals;
+
+-- start a transaction 4
+begin;
+-- Delete all animals born after Jan 1st, 2022
+delete from animals where date_of_birth > '2022-01-01';
+-- Create a savepoint for the transaction.
+savepoint sp1;
+-- Update all animals' weight to be their weight multiplied by -1.
+update animals
+set weight_kg = -1 * weight_kg;
+-- Rollback to the savepoint
+rollback to sp1;
+-- Update all animals' weights that are negative to be their weight multiplied by -1.
+update animals
+set weight_kg = -1 * weight_kg where weight_kg < 0;
+-- Commit transaction
+commit;
+
+-- Write queries to answer the following questions:
+-- How many animals are there?
+select count(id) from animals;
+-- How many animals have never tried to escape?
+select count(escape_attempts) from animals where escape_attempts = 0;
+-- What is the average weight of animals?
+select avg(weight_kg) from animals;
+-- Who escapes the most, neutered or not neutered animals?
+select neutered, max(escape_attempts) from animals
+group by neutered;
+-- What is the minimum and maximum weight of each type of animal?
+select species, min(weight_kg), max(weight_kg) from animals
+group by species;
+-- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
+select species, avg(escape_attempts) from animals where date_of_birth between '1990-01-01' and '2000-12-31'
+group by species;

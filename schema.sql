@@ -11,3 +11,6 @@ neutered  BOOLEAN,
 weight_kg DECIMAL
 );
 
+-- Add a column species of type string to animals table
+alter table animals
+add column species varchar(250);
