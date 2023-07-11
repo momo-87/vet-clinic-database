@@ -23,3 +23,6 @@ create table species(
 id int generated always as identity primary key,
 name varchar(250)
 );
+
+-- Set Id column as primary key in animals table
+alter table animals add primary key(id);
