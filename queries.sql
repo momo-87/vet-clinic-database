@@ -63,3 +63,7 @@ update animals
 set weight_kg = -1 * weight_kg where weight_kg < 0;
 -- Commit transaction
 commit;
+
+-- Write queries to answer the following questions:
+-- How many animals are there?
+select count(id) from animals;
