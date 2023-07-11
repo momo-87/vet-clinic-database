@@ -67,3 +67,5 @@ commit;
 -- Write queries to answer the following questions:
 -- How many animals are there?
 select count(id) from animals;
+-- How many animals have never tried to escape?
+select count(escape_attempts) from animals where escape_attempts = 0;
