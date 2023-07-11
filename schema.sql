@@ -26,3 +26,7 @@ name varchar(250)
 
 -- Set Id column as primary key in animals table
 alter table animals add primary key(id);
+
+-- Add species_id column to animals table an set it as foreign key referencing species table
+add column species_id int;
+add foreign key (species_id) references species(id);
