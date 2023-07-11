@@ -69,3 +69,5 @@ commit;
 select count(id) from animals;
 -- How many animals have never tried to escape?
 select count(escape_attempts) from animals where escape_attempts = 0;
+-- What is the average weight of animals?
+select avg(weight_kg) from animals;
