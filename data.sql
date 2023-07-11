@@ -13,3 +13,7 @@ insert into species (name) values ('Pokemon'), ('Digimon');
 -- Set species_id = 2 for animals which name ends with 'mon'
 update animals
 set species_id = 2 where name like '%mon';
+
+-- Set species_id = 1 for others animals
+update animals
+set species_id = 1 where species_id is null;
