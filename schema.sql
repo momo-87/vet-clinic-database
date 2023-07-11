@@ -15,4 +15,11 @@ weight_kg DECIMAL
 create table owners(
 id int generated always as identity primary key,
 full_name varchar(250),
-age int);
+age int
+);
+
+-- Create species table
+create table species(
+id int generated always as identity primary key,
+name varchar(250)
+);
