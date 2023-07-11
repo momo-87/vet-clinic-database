@@ -24,8 +24,8 @@ select * from animals where weight_kg between 10.4 and 17.3;
 
 -- Set the species column to unspecified inside a transaction then roll back
 begin;
-alter table animals
-rename column species to unspecified;
+update animals
+set species = 'unspecified' where species is null;
 rollback;
 
 
