@@ -25,8 +25,11 @@ select * from animals where weight_kg between 10.4 and 17.3;
 -- Set the species column to unspecified inside a transaction then roll back
 begin;
 update animals
-set species = 'unspecified' where species is null;
-rollback;
+set species = 'unspecified'; -- make changes
+SELECT species from animals; -- verify that change was made 
+rollback; -- undo change
+SELECT species from animals; -- verify that change was undone
+COMMIT; -- end transaction
 
 -- start a transaction 1
 begin;
