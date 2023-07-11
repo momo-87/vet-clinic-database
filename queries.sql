@@ -58,3 +58,6 @@ update animals
 set weight_kg = -1 * weight_kg;
 -- Rollback to the savepoint
 rollback to sp1;
+-- Update all animals' weights that are negative to be their weight multiplied by -1.
+update animals
+set weight_kg = -1 * weight_kg where weight_kg < 0;
