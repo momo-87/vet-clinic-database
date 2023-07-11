@@ -53,3 +53,7 @@ begin;
 delete from animals where date_of_birth > '2022-01-01';
 -- Create a savepoint for the transaction.
 savepoint sp1;
+-- Update all animals' weight to be their weight multiplied by -1.
+update animals
+set weight_kg = -1 * weight_kg;
+
