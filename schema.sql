@@ -28,5 +28,9 @@ name varchar(250)
 alter table animals add primary key(id);
 
 -- Add species_id column to animals table an set it as foreign key referencing species table
-add column species_id int;
-add foreign key (species_id) references species(id);
+alter table animals add column species_id int;
+alter table animals add foreign key (species_id) references species(id);
+
+-- Add owners_id column to animals table an set it as foreign key referencing owners table
+alter table animals add column owners_id int;
+alter table animals add foreign key (owners_id) references owners(id);
