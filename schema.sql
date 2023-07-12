@@ -11,6 +11,10 @@ neutered  BOOLEAN,
 weight_kg DECIMAL
 );
 
+-- Add a column species of type string to animals table
+alter table animals
+add column species varchar(250);
+
 -- Create owners table
 create table owners(
 id int generated always as identity primary key,
