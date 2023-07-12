@@ -92,6 +92,10 @@ join species
 on species_id = species.id
 where species.id = 1;
 
-
+-- List all owners and their animals, remember to include those that don't own any animal.
+select full_name, name
+from owners
+left join animals
+on owners.id = owner_id;
 
 
