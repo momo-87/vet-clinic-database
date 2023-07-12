@@ -28,8 +28,12 @@ id int generated always as identity primary key,
 name varchar(250)
 );
 
--- Set Id column as primary key in animals table
-alter table animals add primary key(id);
+-- Modify animals table
+alter table animals add primary key(id); -- Set Id column as primary key in animals table
+-- Remove column species
+alter table animals
+drop column species;
+
 
 -- Add species_id column to animals table an set it as foreign key referencing species table
 alter table animals add column species_id int;
