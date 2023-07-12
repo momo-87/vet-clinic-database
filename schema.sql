@@ -33,12 +33,9 @@ alter table animals add primary key(id); -- Set Id column as primary key in anim
 -- Remove column species
 alter table animals
 drop column species;
-
-
 -- Add species_id column to animals table an set it as foreign key referencing species table
 alter table animals add column species_id int;
 alter table animals add foreign key (species_id) references species(id);
-
 -- Add owners_id column to animals table an set it as foreign key referencing owners table
-alter table animals add column owners_id int;
-alter table animals add foreign key (owners_id) references owners(id);
+alter table animals add column owner_id int;
+alter table animals add foreign key (owner_id) references owners(id);
