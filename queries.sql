@@ -114,5 +114,12 @@ join owners
 on owner_id = owners.id
 where owners.id = 2 and species.name = 'Digimon';
 
+-- List all animals owned by Dean Winchester that haven't tried to escape.
+select name
+from animals
+join owners
+on owner_id = owners.id
+where full_name = 'Dean Winchester' and escape_attempts = 0;
+
 
 
