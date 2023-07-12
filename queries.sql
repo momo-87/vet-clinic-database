@@ -105,6 +105,14 @@ join species
 on species_id = species.id
 group by species.name;
 
+-- List all Digimon owned by Jennifer Orwell.
+select animals.name
+from species
+join animals
+on species.id = species_id
+join owners
+on owner_id = owners.id
+where owners.id = 2 and species.name = 'Digimon';
 
 
 
