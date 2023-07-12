@@ -77,6 +77,12 @@ group by species;
 select species, avg(escape_attempts) from animals where date_of_birth between '1990-01-01' and '2000-12-31'
 group by species;
 
-
+-- WRITE QUERIES TO ANSWER THE FOLLOWING QUESTIONS:
+-- What animals belong to Melody Pond?
+select name
+from animals
+join owners
+on owner_id = owners.id
+where owners.id = 4;
 
 
