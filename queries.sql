@@ -128,6 +128,3 @@ join animals
 on owners.id = owner_id
 group by full_name
 order by count(*) desc limit 1;
-
-
-
