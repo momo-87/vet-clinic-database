@@ -98,4 +98,13 @@ from owners
 left join animals
 on owners.id = owner_id;
 
+-- How many animals are there per species?
+select count(animals.id), species.name
+from animals
+join species
+on species_id = species.id
+group by species.name;
+
+
+
 
