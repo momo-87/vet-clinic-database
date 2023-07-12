@@ -85,4 +85,13 @@ join owners
 on owner_id = owners.id
 where owners.id = 4;
 
+-- List of all animals that are pokemon (their type is Pokemon).
+select animals.name
+from animals
+join species
+on species_id = species.id
+where species.id = 1;
+
+
+
 
