@@ -152,9 +152,9 @@ where vets.name = 'Stephanie Mendez';
 -- List all vets and their specialties, including vets with no specialties.
 select vets.name as vets, species.name as specialties
 from vets
-join specializations
+left join specializations
 on vets.id = vet_id
-join species
+left join species
 on species_id = species.id;
 
 -- List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
