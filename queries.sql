@@ -185,4 +185,14 @@ join vets
 on vet_id = vets.id
 where vets.name = 'Maisy Smith'
 group by animals.name
-order by min(date_of_birth) asc limit 1;
+order by min(date_of_visit) asc limit 1;
+
+-- Details for most recent visit: animal information, vet information, and date of visit.
+Select animals.*, vets.name, age, date_of_graduation, date_of_visit
+from animals
+join visits on animals.id = animal_id
+join vets on vet_id = vets.id
+where date_of_visit = (
+  select MAX(date_of_visit)
+  from visits
+);
