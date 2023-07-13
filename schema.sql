@@ -48,7 +48,7 @@ age int,
 date_of_graduation date
  );
 
---  Create a "join table" called specializations to handle the  relationship between species and vets tables
+--  Create a 'join table' called specializations to handle the  relationship between species and vets tables
 create table specializations(
 species_id int,
 vet_id int,
