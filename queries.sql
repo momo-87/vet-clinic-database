@@ -175,3 +175,14 @@ join vets
 on vet_id = vets.id
 group by animals.name
 order by count(animals.name) desc limit 1;
+
+-- Who was Maisy Smith's first visit?
+select animals.name
+from animals
+join visits
+on animals.id = animal_id
+join vets
+on vet_id = vets.id
+where vets.name = 'Maisy Smith'
+group by animals.name
+order by min(date_of_birth) asc limit 1;
