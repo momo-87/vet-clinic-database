@@ -56,4 +56,11 @@ foreign key (species_id) references species(id),
 foreign key (vet_id) references vets(id)
 );
 
-
+--  Create a 'join table' called visits to handle the relationship between animals and vets
+create table visits(
+animal_id int,
+vet_id int,
+date_of_visit date,
+foreign key (animal_id) references animals(id),
+foreign key (vet_id) references vets(id)
+);
