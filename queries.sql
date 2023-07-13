@@ -208,4 +208,18 @@ join vets
 on visits.vet_id = vets.id
 join specializations
 on vets.id = specializations.vet_id
-where specializations.species_id != animals.species_id and vets.name != 'Stephanie Mendez';
+where specializations.species_id != animals.species_id
+and vets.name != 'Stephanie Mendez';
+
+-- What specialty should Maisy Smith consider getting? Look for the species she gets the most
+select species.name
+from species
+join animals
+on species.id = animals.species_id
+join visits
+on animals.id = animal_id
+join vets
+on vet_id = vets.id
+where vets.name = 'Maisy Smith'
+group by species.name
+order by count(*) desc limit 1;
