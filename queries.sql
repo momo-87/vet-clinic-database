@@ -196,3 +196,16 @@ where date_of_visit = (
   select MAX(date_of_visit)
   from visits
 );
+
+-- How many visits were with a vet that did not specialize in that animal's species?
+select count (animals.name)
+from animals
+join species
+on animals.species_id = species.id
+join visits
+on animals.id = animal_id
+join vets
+on visits.vet_id = vets.id
+join specializations
+on vets.id = specializations.vet_id
+where specializations.species_id != animals.species_id and vets.name != 'Stephanie Mendez';
