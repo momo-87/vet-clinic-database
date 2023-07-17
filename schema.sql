@@ -67,3 +67,12 @@ foreign key (vet_id) references vets(id)
 
 -- Add column email to owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- create index visits_animals_id_index on visits(animal_id asc) for performance optimization
+create index visits_animals_id_index on visits(animal_id asc);
+
+-- create index visits_vet_id_index on visits(vet_id)
+create index visits_vet_id_index on visits(vet_id);
+
+-- create index owners_email_index on owners (email asc)
+create index owners_email_index on owners (email asc);
