@@ -5,9 +5,9 @@
   <br/>  
   <h2><b>Vet Clinic Database</b></h2>
 </div>
-<!-- <div align="center">
-  <img src="./src/assets/images/screenShoots.png" alt="screenshot"/>
-</div> -->
+<div align="center">
+  <img src="./vet_clinic_ERD.png" alt="screenshot"/>
+</div>
 
 # 📗 Table of Contents
 
